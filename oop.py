@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 class PlayerCharacters:
     membership = True
 
@@ -35,19 +38,48 @@ class PlayerCharacters:
 
 class OfflinePlayers(PlayerCharacters):
     membership = False
-    
+
     def __init__(self, name, age, email, offline_timing):
         super().__init__(name, age, email)
         self.offline_timing = offline_timing
 
+
 class OnlinePlayers(PlayerCharacters):
     membership = True
-    
+
     def __init__(self, name, age, email):
         super().__init__(name, age, email)
 
-off_player = OfflinePlayers("Praga", 20,"praga@gmail.com", '15:30')
+
+off_player = OfflinePlayers("Praga", 20, "praga@gmail.com", '15:30')
 off_player.run(10)
 
 online_player1 = OnlinePlayers("jonas", 33, "jonas@gmail.com")
 online_player1.run(90)
+
+# ======================= #
+
+
+def multiplyby_2(item):
+    return item * 2
+
+
+new_list = list(map(multiplyby_2, [1, 2, 3]))
+print(new_list)
+
+my_list = [1, 2, 3, 4]
+your_list = [13, 52, 23]
+print(list(zip(my_list, your_list)))
+
+
+reduce_func = reduce(lambda acc, curr: acc + curr, my_list, 0)
+print(reduce_func)
+
+
+def accumulator(acc, item):
+    return acc + item
+
+
+reduce_func = reduce(accumulator, my_list, 0)
+
+print(reduce_func)
