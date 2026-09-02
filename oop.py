@@ -92,3 +92,13 @@ b = [('a', 'b'), ('o', 'p'), ('e', 'q')]
 b.sort(key=lambda letter: letter[0])
 print(b)
 
+
+# list comprehensions
+my_list1 = [char for char in "Pragatheshwaran"]
+my_list2 = [num for num in range(0,100) if num % 2 == 0]
+print(my_list1)
+print(my_list2)
+
+my_list = ['a', 'b', 'b', 'd', 'e', 'r', 'e']
+duplicate = list(set(letter for letter in my_list if my_list.count(letter) > 1))
+print(duplicate)
