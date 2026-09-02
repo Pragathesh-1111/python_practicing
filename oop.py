@@ -83,3 +83,12 @@ def accumulator(acc, item):
 reduce_func = reduce(accumulator, my_list, 0)
 
 print(reduce_func)
+
+a = [(1, 2), (93, 5), (6, -7)]
+a.sort(key=lambda x: x[0])
+print(a)
+
+b = [('a', 'b'), ('o', 'p'), ('e', 'q')]
+b.sort(key=lambda letter: letter[0])
+print(b)
+
